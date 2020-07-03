@@ -1,178 +1,195 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>Easy Admin Panel an Admin Panel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Easy Admin Panel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
- <!-- Bootstrap Core CSS -->
-<link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
-<link href="<?php echo base_url();?>assets/css/style.css" rel='stylesheet' type='text/css' />
-<!-- Graph CSS -->
-<link href="<?php echo base_url();?>assets/css/font-awesome.css" rel="stylesheet"> 
-<!-- jQuery -->
-<!-- lined-icons -->
-<link rel="<?php echo base_url();?>assets/stylesheet" href="css/icon-font.min.css" type='text/css' />
-<!-- //lined-icons -->
-<!-- chart -->
-<script src="<?php echo base_url();?>assets/js/Chart.js"></script>
-<!-- //chart -->
-<!--animate-->
-<link href="<?php echo base_url();?>assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
-<script src="<?php echo base_url();?>assets/js/wow.min.js"></script>
-	<script>
-		 new WOW().init();
-	</script>
-<!--//end-animate-->
-<!----webfonts--->
-<link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-<!---//webfonts---> 
- <!-- Meters graphs -->
-<script src="<?php echo base_url();?>assets/js/jquery-1.10.2.min.js"></script>
-<!-- Placed js at the end of the document so the pages load faster -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?= $page_title; ?></title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head> 
-   
- <body class="sticky-header left-side-collapsed"  onload="initMap()">
-    <section>
-    <!-- left side start-->
-		<div class="left-side sticky-left-side">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?= base_url("assets/") ?>plugins/fontawesome-free/css/all.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<!-- overlayScrollbars -->
+	<link rel="stylesheet" href="<?= base_url("assets/") ?>dist/css/adminlte.min.css">
 
-			<!--logo and iconic logo start-->
-			<div class="logo">
-				<h1><a href="index.html"><span>Sekretaris</span></a></h1>
-			</div>
-			<div class="logo-icon text-center">
-				<a href="index.html"><i class="lnr lnr-home"></i> </a>
-			</div>
+	<?php
+	@$main_css ? $this->load->view("css_load/" . $main_css) : ''; ?>
+	<!-- Google Font: Source Sans Pro -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
 
-			<!--logo and iconic logo end-->
-			<div class="left-side-inner">
+<body class="hold-transition sidebar-mini">
+	<!-- Site wrapper -->
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+					<a href="<?= base_url() ?>" class="nav-link">Home</a>
+				</li>
+			</ul>
 
-				<!--sidebar nav start-->
-				<ul class="nav nav-pills nav-stacked custom-nav">
-				<?php
-					if($this->session->userdata('jabatan') == 'Sekretaris') {
-						echo '
-						<li class="active">
-							<a href="'.base_url('index.php/surat/index').'"><i class="lnr lnr-power-switch"></i><span>Dashboard</span></a>
-						</li>
-						<li class="active">
-							<a href="'.base_url('index.php/surat/surat_masuk').'"><i class="lnr lnr-power-switch"></i><span>Surat Masuk</span></a>
-						</li>
-						<li class="active">
-							<a href="'.base_url('index.php/surat/surat_keluar').'"><i class="lnr lnr-power-switch"></i><span>Surat Keluar</span></a>
-						</li>
-						';
-					} else{
-						echo'
-						<li class="active">
-							<a href="'.base_url('index.php/surat').'"><i class="lnr lnr-power-switch"></i><span>Disposisi Surat</span></a>
-						</li>
-						';
-					}
-				?> 
-					
-						
-						
-					</ul>
-				<!--sidebar nav end-->
-			</div>
-		</div>
-		<!-- left side end-->
-    
-		<!-- main content start-->
-		<div class="main-content">
-			<!-- header-starts -->
-			<div class="header-section">
-			 
-			<!--toggle button start-->
-			<a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
-			<!--toggle button end-->
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+						<i class="fas fa-th-large"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
 
-			<!--notification menu start -->
-			<div class="menu-right">
-				<div class="user-panel-top">  	
-					<div class="profile_details_left">
-						<ul class="nofitications-dropdown">
-							
-						
-							   							   		
-							<div class="clearfix"></div>	
-						</ul>
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="#" class="brand-link">
+				<img src="<?= base_url("assets/") ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+				<span class="brand-text font-weight-light">Arisp Surat</span>
+			</a>
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+						<img src="<?= base_url("assets/") ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 					</div>
-					<div class="profile_details">		
-						<ul>
-							<li class="dropdown profile_details_drop">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									<div class="profile_img">	
-										<span style="background:url(images/1.jpg) no-repeat center"> </span> 
-										 <div class="user-name">
-											<p>Michael<span>Administrator</span></p>
-										 </div>
-										 <i class="lnr lnr-chevron-down"></i>
-										 <i class="lnr lnr-chevron-up"></i>
-										<div class="clearfix"></div>	
-									</div>	
-								</a>
-								<ul class="dropdown-menu drp-mnu">
-									<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-									<li> <a href="#"><i class="fa fa-user"></i>Profile</a> </li> 
-									<li> <a href="<?php echo base_url();?>index.php/login/logout"><i class="fa fa-sign-out"></i> Logout</a> </li>
-								</ul>
-							</li>
-							<div class="clearfix"> </div>
-						</ul>
-					</div>		
-					<div class="social_icons">
-						<div class="col-md-4 social_icons-left">
-							<a href="#" class="yui"><i class="fa fa-facebook i1"></i><span>300<sup>+</sup> Likes</span></a>
-						</div>
-						<div class="col-md-4 social_icons-left pinterest">
-							<a href="#"><i class="fa fa-google-plus i1"></i><span>500<sup>+</sup> Shares</span></a>
-						</div>
-						<div class="col-md-4 social_icons-left twi">
-							<a href="#"><i class="fa fa-twitter i1"></i><span>500<sup>+</sup> Tweets</span></a>
-						</div>
-						<div class="clearfix"> </div>
-					</div>            	
-					<div class="clearfix"></div>
+					<div class="info">
+						<a href="#" class="d-block">Petugas</a>
+					</div>
 				</div>
-			  </div>
-			<!--notification menu end -->
-			</div>
-		<!-- //header-ends -->
 
-<!-- CONTENT -->		
-<?php
-$this->load->view($main_view);
-?>		
-</div>
-			<!--body wrapper start-->
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+						<!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+						<li class="nav-item">
+							<a href="<?= base_url("surat") ?>" class="nav-link">
+								<i class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									Dashboard
+								</p>
+							</a>
+						</li>
+
+						<li class="nav-item has-treeview">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-edit"></i>
+								<p>
+									Surat
+									<i class="fas fa-angle-left right"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="<?= base_url('surat/masuk'); ?>" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Surat Masuk</p>
+									</a>
+								</li>
+								<li class="nav-item">
+									<a href="<?= base_url('surat/keluar'); ?>" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Surat Keluar</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item has-treeview">
+							<a href="#" class="nav-link">
+								<i class="nav-icon fas fa-book"></i>
+								<p>
+									Laporan
+									<i class="fas fa-angle-left right"></i>
+								</p>
+							</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item">
+									<a href="#" class="nav-link">
+										<i class="far fa-circle nav-icon"></i>
+										<p>Belum Selesai</p>
+									</a>
+								</li>
+
+							</ul>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url("login/logout"); ?>" class="nav-link">
+								<i class="nav-icon far fa-circle text-danger"></i>
+								<p class="text">Logout</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
 			</div>
-			 <!--body wrapper end-->
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+
+		<!-- /.content-wrapper -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div class="container-fluid">
+					<!-- CONTENT -->
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1><?= $page_title; ?></h1>
+						</div>
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a></li>
+								<li class="breadcrumb-item active"><?= $title; ?></li>
+							</ol>
+						</div>
+					</div>
+				</div><!-- /.container-fluid -->
+
+				<!-- //content -->
+
+				<?php $this->load->view($main_view); ?>
+				<!-- and content -->
+			</section>
 		</div>
-        <!--footer section start-->
-			<footer>
-			   <p>&copy 2015 Easy Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts.</a></p>
-			</footer>
-        <!--footer section end-->
 
-      <!-- main content end-->
-   </section>
-  
-<script src="<?php echo base_url();?>assets/js/jquery.nicescroll.js"></script>
-<script src="<?php echo base_url();?>assets/js/scripts.js"></script>
-<!-- Bootstrap Core JavaScript -->
-   <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+		<footer class="main-footer">
+			<div class="float-right d-none d-sm-block">
+				<b>Version</b> 3.0.5
+			</div>
+			<strong>Copyright &copy; 2020 </strong> All rightsreserved.
+		</footer>
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Control sidebar content goes here -->
+		</aside>
+		<!-- /.control-sidebar -->
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- jQuery -->
+	<script src="<?= base_url("assets/") ?>plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script src="<?= base_url("assets/") ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<?php
+	@$main_js ? $this->load->view("js_load/" . $main_js) : ''; ?>
+
+	<!-- AdminLTE App -->
+	<script src="<?= base_url("assets/") ?>dist/js/adminlte.min.js"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<?= base_url("assets/") ?>dist/js/demo.js"></script>
 </body>
+
 </html>
